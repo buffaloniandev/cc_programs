@@ -11,7 +11,7 @@ else
   handle.close()
   
   print("What is the file path to save the script?")
-  print("(e.g. /startup.lua)\n")
+  print("(e.g. /startup.lua)")
   path = read()
   print("")
   
