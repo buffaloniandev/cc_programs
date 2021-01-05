@@ -1,5 +1,7 @@
+term.clear()
+print("Buffalo buffalo buffalo.")
+print("Beginning startup.")
 script_url = "https://raw.githubusercontent.com/buffaloniandev/cc_programs/main/turtles/startup.lua"
-
 script_handle = http.get(script_url)
 if not script_handle then
   print("Update check failed.")
