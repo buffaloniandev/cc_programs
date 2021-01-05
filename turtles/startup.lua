@@ -1,17 +1,24 @@
 term.clear()
 print("Buffalo buffalo buffalo.")
 print("Beginning startup.")
-script_url = "https://raw.githubusercontent.com/buffaloniandev/cc_programs/main/turtles/startup.lua"
-script_handle = http.get(script_url)
-if not script_handle then
+
+url = "https://raw.githubusercontent.com/buffaloniandev/cc_programs/main/turtles/startup.lua"
+path = "/startup.lua"
+
+handle = http.get(url)
+
+if not handle then
   print("Update check failed.")
 else
   print("Updating...")
-  script_content = script_handle.readAll()
-  script_handle.close()
-  startup_handle = fs.open("/startup.lua", 'w')
-  startup_handle.write(script_content)
-  startup_handle.close()
+  
+  content = handle.readAll()
+  handle.close()
+  
+  handle = fs.open(path, 'w')
+  handle.write(content)
+  handle.close()
+  
   print("Updated.")
 end
 print("Startup complete.")
