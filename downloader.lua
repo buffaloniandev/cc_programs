@@ -1,7 +1,7 @@
 print("What is the URL for the script?")
 print("(e.g. https://example.com/script.lua)\n")
 url = read()
-handle = http.get(script_url)
+handle = http.get(url)
 
 if not handle then
   print("Failed to locate script.")
